@@ -9,10 +9,16 @@ class Person(models.Model):
     patronymic = models.CharField(max_length=100)
     birth_day = models.DateField()
 
+    def __str__(self):
+        return self.surname + " " + self.name + " " + self.patronymic + " " + self.birth_day.strftime("%Y-%m-%d")
+
 
 class Group(models.Model):
     name = models.CharField(max_length=10)
     curator = models.ForeignKey(Person, null=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.name
 
 
 class Student(models.Model):
@@ -30,6 +36,7 @@ class Lecturer(models.Model):
 class Discipline(models.Model):
     name = models.CharField(max_length=200)
     lecturer = models.ForeignKey(Lecturer, null=True, on_delete=models.SET_NULL)
+    description = models.CharField(max_length=2048, null=True)
 
 
 class Grade(models.Model):
