@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'mz_app.apps.NewAppConfig',
+    'mz_app.apps.MzAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
