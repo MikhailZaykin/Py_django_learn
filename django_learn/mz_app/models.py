@@ -10,7 +10,7 @@ class Person(models.Model):
     birth_day = models.DateField()
 
     def __str__(self):
-        return self.surname + " " + self.name + " " + self.patronymic + " " + self.birth_day.strftime("%Y-%m-%d")
+        return f"Person: {self.surname} {self.name} {self.patronymic} %s" % self.birth_day.strftime("%Y-%m-%d")
 
 
 class Group(models.Model):
