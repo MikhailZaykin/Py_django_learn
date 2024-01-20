@@ -22,6 +22,7 @@ import mz_app.viewsets
 
 router = DynamicRouter()
 router.register(r'persons', mz_app.viewsets.PersonViewSet)
+router.register(r'groups', mz_app.viewsets.GroupViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
