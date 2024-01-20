@@ -17,7 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from dynamic_rest.routers import DynamicRouter
+import mz_app.viewsets
+
+router = DynamicRouter()
+router.register(r'persons', mz_app.viewsets.PersonViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("mz_app/", include("mz_app.urls")),
+    path('api/', include(router.urls)),
 ]
